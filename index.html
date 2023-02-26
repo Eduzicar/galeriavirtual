@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
     
-    <!-- Image link template to be reused. -->
+ 
     <script id="link" type="text/html">
       <a-entity class="link"
         geometry="primitive: plane; height: 1; width: 1"
@@ -26,8 +26,8 @@
     <a-scene>
       <a-assets>
         <img id="gal" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/Galeria?v=1677440974049">
-        <img id="gal-thumb" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/Galeria?v=1677440974049">
-        <img id="robo-thumb" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/robot?v=1677441131237">
+        <img id="gal-thumb" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/montagem%20galeria.png?v=1677440517091">
+        <img id="robo-thumb" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/robothand4.png?v=1677442911551">
       
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         <img id="robo" crossorigin="anonymous" src="https://cdn.glitch.global/535b3119-6c08-4d29-bffa-b42f70f6880c/robot?v=1677441131237">
@@ -35,19 +35,19 @@
 
       </a-assets>
 
-      <!-- 360-degree image. -->
+ 
       <a-sky id="image-360" radius="10" src="#gal"
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
-      <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+
+      <a-entity id="links" layout="type: line; margin: 1.5" position="0 1 -4">
         <a-entity template="src: #link" data-src="#robo" data-thumb="#robo-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#gal" data-thumb="#gal-thumb"></a-entity>
 
       </a-entity>
 
-      <!-- Camera + cursor. -->
+      
       <a-entity camera look-controls>
         <a-cursor
           id="cursor"
